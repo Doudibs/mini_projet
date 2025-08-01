@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "ccb8e7a1-93c3-4d49-8ba2-a409fd865929",
+		"name": "Mini Projet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13207353"
+	},
+	"item": [
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "create project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"premier Projet\",\r\n    \"description\": \"Ceci est notre premier projet merci :)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/create_project",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"create_project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all projetcs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/get_all",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"get_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get project by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/get_by_id/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"get_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/delete_project/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"delete_project",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_ project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"Mon Plus beau Projet\",\r\n    \"description\": \"HELLO WORLD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/updateProject/6",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"updateProject",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Taches",
+			"item": [
+				{
+					"name": "cretae Tache",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titre\": \"notre tache qui appartient au projet numero 3\",\r\n    \"statut\": \"en cours\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/3/taches/create_tache",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"3",
+								"taches",
+								"create_tache"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all taches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/3/taches/get_taches",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"3",
+								"taches",
+								"get_taches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titre\": \"tache updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/12/taches/update_tache/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"12",
+								"taches",
+								"update_tache",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tache",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/projects/2/taches/delete_tache/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2",
+								"taches",
+								"delete_tache",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
