@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #3498db;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+#projetsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projet-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.projet-card:hover {
+  transform: translateY(-3px);
+}
+
+.projet-card h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.projet-card p {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.projet-card small {
+  display: block;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background: #e74c3c;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+li button:hover {
+  background: #c0392b;
+}
+
+.projet-card form {
+  display: flex;
+  gap: 10px;
+}
+
+.projet-card form input {
+  flex: 1;
+}
