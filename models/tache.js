@@ -10,10 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Tache.belongsTo(models.Project, {
-        foreignKey: 'project_id',
-        as: 'project'
-      })
+      // define association here
     }
   }
   Tache.init({

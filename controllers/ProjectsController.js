@@ -5,7 +5,7 @@ const createProject = async (req, res) => {
  
   try {
     const { nom, description } = req.body;
-    const project = await Project.create({ nom, descriprion: description });
+    const project = await Project.create({ nom, description: description });
     res.status(201).json(project);
   } catch (error) {
     res.status(500).json({ message: "Erreur Serveur !", error });
@@ -52,7 +52,7 @@ const updateProject = async (req, res) => {
   if (!project) {
     return res.status(404).json({ message: "Projet non trouvé" });
   }
-  await project.update({ nom, descriprion: description });
+  await project.update({ nom, description: description });
   res.json(project);
 };
 

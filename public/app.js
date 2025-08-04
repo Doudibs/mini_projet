@@ -22,7 +22,7 @@ async function chargerProjets() {
 
     div.innerHTML = `
       <h3>${projet.nom}</h3>
-      <p>${projet.descriprion || ""}</p>
+      <p>${projet.description || ""}</p>
       <small>Créé le ${new Date(projet.createdAt).toLocaleDateString()}</small>
       <button onclick="supprimerProjet(${projet.id})">Supprimer</button>
       <h4>Taches : </h4>

@@ -14,7 +14,7 @@ npm install
 
 # Génération des modèles Sequelize
 
-npx sequelize-cli model:generate --name Project --attributes nom:string,descriprion:text,dateCreation:date
+npx sequelize-cli model:generate --name Project --attributes nom:string,description:text,dateCreation:date
 
 npx sequelize-cli model:generate --name Tache --attributes titre:string,statut:string,project_id:integer
 

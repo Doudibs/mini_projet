@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Project.init({
     nom: DataTypes.STRING,
-    descriprion: DataTypes.TEXT,
+    description: DataTypes.TEXT,
     dateCreation: DataTypes.DATE
   }, {
     sequelize,
