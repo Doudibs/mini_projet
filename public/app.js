@@ -51,7 +51,8 @@ async function chargerProjets() {
 
 async function ajouterProjet(e) {
   e.preventDefault();
-  await fetch(`${API_URL}/create_project`, {
+
+  const res = await fetch(`${API_URL}/create_project`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -59,8 +60,22 @@ async function ajouterProjet(e) {
       description: descriptionProjet.value,
     }),
   });
-  projetForm.reset();
-  chargerProjets();
+
+  const erreurDiv = document.getElementById("erreurProjet");
+
+  if (res.status == 400) {
+    const data = await res.json();
+    if (data.errors && Array.isArray(data.errors)) {
+      const messages = data.errors.map((err) => `- ${err.msg}`).join("</br>");
+      erreurDiv.innerHTML = messages;
+    } else {
+      erreurDiv.innerHTML = "Erreur inattendur lors de la creation du projet";
+    }
+  } else {
+    erreurDiv.innerHTML = "";
+    projetForm.reset();
+    chargerProjets();
+  }
 }
 
 async function supprimerProjet(id) {
@@ -69,9 +84,9 @@ async function supprimerProjet(id) {
 }
 
 async function supprimerTache(projectId, tacheId) {
-  await fetch(`${API_URL}/${projectId}/taches/delete_tache/${tacheId}`, 
-    {method : "DELETE"}
-  );
+  await fetch(`${API_URL}/${projectId}/taches/delete_tache/${tacheId}`, {
+    method: "DELETE",
+  });
 
   chargerProjets();
 }
@@ -80,14 +95,12 @@ async function ajouterTache(e, projectId) {
   e.preventDefault();
   const titre = e.target.titre.value;
 
-  await fetch(`${API_URL}/${projectId}/taches/create_tache`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ titre })
-    }
-  )
-  chargerProjets()
+  await fetch(`${API_URL}/${projectId}/taches/create_tache`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ titre }),
+  });
+  chargerProjets();
 }
 
 // Initialisation

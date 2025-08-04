@@ -1,13 +1,10 @@
 const { Project } = require("../models");
+const {validationResult} = require("express-validator")
 
 const createProject = async (req, res) => {
+ 
   try {
     const { nom, description } = req.body;
-
-    if (!nom || nom === "") {
-      return res.status(400).json({ message: "Le nom du projet est requis" });
-    }
-
     const project = await Project.create({ nom, descriprion: description });
     res.status(201).json(project);
   } catch (error) {

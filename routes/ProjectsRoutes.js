@@ -7,9 +7,10 @@ const {
   updateProject
 } = require("../controllers/ProjectsController");
 const tachesRoutes = require('./TacheRoutes')
+const { validateCreateProject } = require('../validators/projectValidator')
 const router = express.Router();
 
-router.post("/create_project", createProject);
+router.post("/create_project",validateCreateProject ,createProject);
 router.get("/get_all", getAllProjects);
 router.get("/get_by_id/:id", getProjectById);
 router.delete("/delete_project/:id", deleteProject);
