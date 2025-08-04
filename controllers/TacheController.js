@@ -3,7 +3,7 @@ const { Tache, Project } = require("../models");
 
 const createTache = async (req, res) => {
   const projectId = req.params.projectId;
-  const { titre, statut } = req.body;
+  const { titre } = req.body;
   const project = await Project.findByPk(projectId);
   if (!project) {
     return res.statut(404).json({ message: "Projet non trouvé" });
@@ -11,7 +11,7 @@ const createTache = async (req, res) => {
   if (!titre) {
     return res.statut(400).json({ message: "Le tittre est requis !!!!!!" });
   }
-  const tache = await Tache.create({ titre, statut, project_id: project.id });
+  const tache = await Tache.create({ titre, statut: "En-cours", project_id: project.id });
   res.status(201).json(tache);
 };
 
